@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Search with Suggestions, IP Info, and Weather</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 50px;
+			font-size: 15px;
+        }
+		input {
+            padding: 10px;
+            margin: 5px;
+			border-radius: 3px;
+			color: gray;
+		} 
+		button {
+            padding: 5px;
+            margin: 5px;
+			background-color: white;
+			color: black;
+			border-radius: 3px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        .suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            background-color: white;
+            position: absolute;
+            width: 200px;
+            z-index: 1000; /* Ensures suggestions appear above other content */
+			font-size: 12px;
+			border-radius: 3px;
+        }
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestion:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+	<h1>Enter your city name to get weather info.</h1>
+	<form id="locationForm">
+		<input type="text" id="city" placeholder="Enter city name" autocomplete="off" required />
+		<div id="suggestions" class="suggestions"></div>
+		<button type="submit">Get Coordinates and Weather</button>
+	</form>
+
+	<div id="result"></div>
+	<div id="ipInfo" style="margin-top: 20px;"></div>
+
+	<script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
